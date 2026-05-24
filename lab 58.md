@@ -1,6 +1,6 @@
 ## Title
 
-# Reflected Cross-Site Scripting (XSS) via Username Path Injection in Mobile Messaging Endpoint
+ Reflected Cross-Site Scripting (XSS) via Username Path Injection in Mobile Messaging Endpoint
 
 ## Vulnerability Type
 
