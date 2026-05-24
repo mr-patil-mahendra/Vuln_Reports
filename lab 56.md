@@ -13,10 +13,9 @@ Pubg-Community Feed  http://kzlabs.com/56.php?p= Search box is vulnerable to ref
 https://labs.krazeplanet.com/56.php?p=
 
 Steps to Reproduce : 
-
-1. Log in to the application at  https://labs.krazeplanet.com/56.php  with Valid account. 
-2. Navigate to the following URL : ```http://kzlabs.com/56.php?p=Game1%27%3E%3Cimg+src%3Da+onerror%3Dalert%28document.cookie%29%3E```
-4. Observe that an alert box displaying , indicating that the JavaScript code was executed.
+ 
+1. Navigate to the following URL : ```http://kzlabs.com/56.php?p=Game1%27%3E%3Cimg+src%3Da+onerror%3Dalert%28document.cookie%29%3E```
+2. Observe that a JavaScript alert box pops up displaying `1` — confirming that the script executed.
 
 ## Payload Used
 
