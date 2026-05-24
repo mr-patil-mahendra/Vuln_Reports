@@ -7,7 +7,7 @@
 Reflected XSS
 
 ## Summary : 
-Pubg-Community Feed  http://kzlabs.com/56.php?p= Search box is vulnerable to reflected XSS . website reflects the User input from search paramter . which leads attacker to add malecious javascript code within victims browser when user visit malecious url . 
+Pubg-Community Feed  http://kzlabs.com/56.php?p= Search box is vulnerable to reflected XSS . website reflects the User input from p paramter . which leads attacker to add malecious javascript code within victims browser when user visit malecious url . 
 
 ## Vulnerable Endpoint
 https://labs.krazeplanet.com/56.php?p=
