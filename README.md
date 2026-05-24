@@ -13,13 +13,12 @@ The purpose of this repository is to maintain organized, structured, and reprodu
 Each vulnerability report typically includes:
 
 - Vulnerability Title
-- Severity Level
-- Affected Endpoint / Component
-- Vulnerability Description
-- Impact Assessment
+- Summary 
+- Vulnerable Endpoint
 - Steps to Reproduce
-- Proof of Concept (PoC)
-- Supporting Evidence / Screenshots
-- Remediation Recommendations
+- Payload Used
+- Proof of Concept Request
+- Impact
+- Recommendations for fix
 
 ---
