@@ -12,7 +12,7 @@ Equifax Help Center http://kzlabs.com/55.php?search= Search box is vulnerable to
 ## Vulnerable Endpoint
 https://labs.krazeplanet.com/56.php?p=
 
-Steps to Reproduce : 
+## Steps to Reproduce : 
 
 1. Log in to the application at  https://labs.krazeplanet.com/55.php  with Valid account.
 2. Navigate to the following URL : ```https://labs.krazeplanet.com/55.php?search=Game1</script><svg onload="alert(1)">```
