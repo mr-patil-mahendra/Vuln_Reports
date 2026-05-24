@@ -14,9 +14,8 @@ http://kzlabs.com/58.php/account/SaturnV/messages
 
 Steps to Reproduce : 
 
-1. Log in to the application at  https://labs.krazeplanet.com/58.php  with Valid account.
-2. Navigate to the following URL : ```http://kzlabs.com/58.php/account/%3Cimg%20src=x%20onerror=%22alert(1)%22%20onclick=%22confirm(1)%22%20onmouseover=%22prompt(1)%22%3E/messages```
-3. Observe that an alert box displaying , indicating that the JavaScript code was executed.
+1. Navigate to the following URL : ```http://kzlabs.com/58.php/account/%3Cimg%20src=x%20onerror=%22alert(1)%22%20onclick=%22confirm(1)%22%20onmouseover=%22prompt(1)%22%3E/messages```
+2. Observe that a JavaScript alert box pops up displaying `1` — confirming that the script executed.
 
 ## Payload Used
 
