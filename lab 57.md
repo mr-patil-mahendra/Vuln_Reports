@@ -1,6 +1,6 @@
 ## Title
 
-# Reflected Cross-Site Scripting (XSS) Open Redirect via returnTo Parameter in Account Confirmation End
+ Reflected Cross-Site Scripting (XSS) Open Redirect via returnTo Parameter in Account Confirmation End
 
 ## Vulnerability Type
 
