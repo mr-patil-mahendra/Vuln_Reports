@@ -1,6 +1,6 @@
 ## Title
 
-# Blind Cross-Site Scripting (XSS) via Register Page Name Field 
+ Blind Cross-Site Scripting (XSS) via Register Page Name Field 
 
 
 ## Vulnerability Type
@@ -47,10 +47,6 @@ https://github.com/user-attachments/assets/0d356cef-a565-4aa1-82d4-e1ce4eb9850a
  An attacker can perform the following actions using this vulnerability:
  
  - Full account takeover without user interaction — hijack session, reset password, or link attacker’s OAuth
- - Execute silent CSRF attacks — change email, add admin, transfer funds, or modify settings in the background
- - Turn the page into a persistent drive-by download — infect visitors with malware or keyloggers
- - Leak entire backend data — read internal files, API responses, or database dumps via internal fetch
- - Deploy a self-spreading worm — each compromised user automatically attacks their own session and propagates
  - Ransom every admin — lock critical functions (e.g., disable admin panel, delete logs) until payment
   
 ## Recommendations for fix:
