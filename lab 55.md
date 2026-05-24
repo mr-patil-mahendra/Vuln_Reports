@@ -1,4 +1,4 @@
-## Title
+# Title
 
  Reflected Cross-Site Scripting (XSS) via search Parameter on Help Center Page
 
