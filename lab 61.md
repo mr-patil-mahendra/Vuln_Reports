@@ -1,27 +1,28 @@
 ## Title
 
-# Stored Cross-Site Scripting (XSS) via My Article Field in Quill
+Stored XSS via Rich Text Editor HTML Tab in Article Body 
 
 ## Vulnerability Type
 
 Stored XSS
 
 ## Summary : 
-The "Report Name" input field in the Network Reports section does not sanitize or encode user-supplied input before storing it in the database and later rendering it back to users. This means any JavaScript payload entered as a report name gets saved and then executed in the browser of every authenticated user who visits the Reports page — not just the attacker.
+
+The application is vulnerable to Stored Cross-Site Scripting (XSS) through the article Body (HTML) field. User-supplied HTML is stored without sanitization and rendered using innerHTML, allowing an attacker to inject malicious JavaScript that executes when users view the affected article page.
 
 ## Vulnerable Endpoint
 http://kzlabs.com/61.php
 
-Vulnerable Parameter: Report Name field (input field inside the "New Network Report" form)
+Vulnerable Parameter: article Body (HTML) field (input field inside the "Write article" form)
 
 ## Steps to Reproduce : 
 
 1. Log in to the application at `https://kzlabs.com/61.php` with a valid account.
-2. Navigate to the Reports tab.
-3. Click on + New Network Report.
-4. In the Report Name field, enter the following payload: `<img src=x onerror="alert(1)" onclick="confirm(1)" onmouseover="prompt(1)">`
-5. Fill in the remaining required fields (Network, Date Range, etc.) and submit the form.
-6. Once the report is saved, you are redirected back to the Network Reports listing page.
+2. Navigate to the My Article tab.
+3. Click on + Write article .
+4. In the Body (html) field, enter the following payload: `<img src=x onerror="alert(1)" onclick="confirm(1)" onmouseover="prompt(1)">`
+5. Fill in the remaining required fields (Title, Tag, etc.) and submit the form.
+6. Once the report is saved, you are redirected back to the article  listing page.
 7. Observe that a JavaScript alert box pops up displaying `1` — confirming that the script executed.
 8. Every authenticated user who loads this page will trigger the same alert.
 
