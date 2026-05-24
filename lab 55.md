@@ -41,17 +41,19 @@ Steps to Reproduce :
 ## Impact
  
  An attacker can perform the following actions using this vulnerability:
- 
-  - Admins are affected too since they visit the same page
-  - Steal Session Cookies of every user who visit the page
-  - Data Exfiltration
-  - Once submission hits every authenticated user.
+  - It allows attackers to hijack user session
+  - It potentially leads to full account takeover
+  - It allows to perform  unauthorized actions within the vulnerable application
+  - It allows attacker to exfiltrate sensitive data
   
 ## Recommendations for fix:
 
  Validate and sanitize the redirectUrl parameter to ensure that it does not contain any malicious content. This can be done by:
 
-1. filter all of tags like these: <script>, <img>, <svg>
-2. filter all of these methods: alert, confirm, prompt
-3. If you're using PHP then use htmlspecialchars() function
-4. use cloudflare they have soo many ruls, almost all of xss payload will be blocked automatically
+- User supplied input should be validated at server level.
+- Use a security encoding library to encode all parameters
+- Use whitelisting instead of blacklist for special charecters
+- Use HTTPOnly flag. This will prevent client-side scripts from accessing cookies
+- Use CSP header and avoid using eval, unsafe-inline etc directives in CSP.
+
+
