@@ -5,7 +5,7 @@
 
 ## Vulnerability Type
 
-Stored XSS
+Blind XSS
 
 ## Summary : 
 The "Full name" input field in the Create New Account  section does not sanitize or encode user-supplied input before storing it in the database and later rendering it back to users. This means any JavaScript payload entered as a report name gets saved and then executed in the browser of every authenticated user who visits the Reports page — not just the attacker.
