@@ -1,6 +1,6 @@
 ## Title
 
-# Blind Cross-Site Scripting (XSS) via Register Page Name Field 
+ Blind Cross-Site Scripting (XSS) via Register Page Name Field 
 
 
 ## Vulnerability Type
