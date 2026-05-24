@@ -46,7 +46,7 @@ https://github.com/user-attachments/assets/572dad72-23c1-44b6-ab02-e02f4df02d45
  An attacker can perform the following actions using this vulnerability:
  
  - Full account takeover without user interaction — hijack session, reset password, or link attacker’s OAuth
- - Ransom every admin — lock critical functions (e.g., disable admin panel, delete logs) until payment
+   
   
 ## Recommendations for fix:
 
