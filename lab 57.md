@@ -1,13 +1,13 @@
 ## Title
 
-# Reflected Cross-Site Scripting (XSS) via returnTo Parameter on Shopify Help Center Page
+# Reflected Cross-Site Scripting (XSS) Open Redirect via returnTo Parameter in Account Confirmation End
 
 ## Vulnerability Type
 
 Reflected XSS
 
 ## Summary : 
-Shopify Help Center http://kzlabs.com/57.php?returnTo= Search box is vulnerable to reflected XSS . website reflects the User input from search paramter . which leads attacker to add malecious javascript code within victims browser when user visit malecious url . 
+The returnTo parameter is vulnerable and Open Redirect due to improper input validation. An attacker can inject a javascript: URI or external URL, leading to JavaScript execution or redirection to a malicious website when a user clicks the Continue button.
 
 ## Vulnerable Endpoint
 https://labs.krazeplanet.com/57.php?returnTo=
@@ -15,8 +15,7 @@ https://labs.krazeplanet.com/57.php?returnTo=
 Steps to Reproduce : 
 
 1. Log in to the application at  https://labs.krazeplanet.com/57.php  with Valid account.
-2. Visit the help center of Equifax 
-3. Navigate to the following URL : ```http://kzlabs.com/57.php?returnTo=javascript:alert(document.cookie)```
+2. Navigate to the following URL : ```http://kzlabs.com/57.php?returnTo=javascript:alert(document.cookie)```
 4. Observe that an alert box displaying , indicating that the JavaScript code was executed.
 
 
