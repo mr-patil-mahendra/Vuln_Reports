@@ -14,9 +14,9 @@ https://labs.krazeplanet.com/57.php?returnTo=
 
 Steps to Reproduce : 
 
-1. Log in to the application at  https://labs.krazeplanet.com/57.php  with Valid account.
-2. Navigate to the following URL : ```http://kzlabs.com/57.php?returnTo=javascript:alert(document.cookie)```
-4. Observe that an alert box displaying , indicating that the JavaScript code was executed.
+
+1. Navigate to the following URL : ```http://kzlabs.com/57.php?returnTo=javascript:alert(document.cookie)```
+2. Observe that a JavaScript alert box pops up displaying `1` — confirming that the script executed.
 
 
 ## Payload Used
