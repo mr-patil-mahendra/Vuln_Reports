@@ -1,13 +1,13 @@
 ## Title
 
-# Reflected Cross-Site Scripting (XSS) in  Imgur's mobile messaging endpoint
+# Reflected Cross-Site Scripting (XSS) via Username Path Injection in Mobile Messaging Endpoint
 
 ## Vulnerability Type
 
 Reflected XSS
 
 ## Summary : 
-Imgur's mobile messaging endpoint  "http://kzlabs.com/58.php/account/USERNAME/messages"  USERNAME is vulnerable to reflected XSS . It appears that the username field in the url does not sanitize angle bracket characters on the mobile version of the site, allowing an attacker to execute arbitrary Javascript on the m.imgur.com domain.
+The application is vulnerable to Reflected XSS through the username segment in the URL path. User input is reflected unsanitized inside a double-quoted href attribute, allowing an attacker to inject malicious JavaScript that executes automatically when a victim visits a crafted URL.
 
 ## Vulnerable Endpoint
 http://kzlabs.com/58.php/account/SaturnV/messages
@@ -15,9 +15,8 @@ http://kzlabs.com/58.php/account/SaturnV/messages
 Steps to Reproduce : 
 
 1. Log in to the application at  https://labs.krazeplanet.com/58.php  with Valid account.
-2. Visit the help center of Equifax 
-3. Navigate to the following URL : ```http://kzlabs.com/58.php/account/%3Cimg%20src=x%20onerror=%22alert(1)%22%20onclick=%22confirm(1)%22%20onmouseover=%22prompt(1)%22%3E/messages```
-4. Observe that an alert box displaying , indicating that the JavaScript code was executed.
+2. Navigate to the following URL : ```http://kzlabs.com/58.php/account/%3Cimg%20src=x%20onerror=%22alert(1)%22%20onclick=%22confirm(1)%22%20onmouseover=%22prompt(1)%22%3E/messages```
+3. Observe that an alert box displaying , indicating that the JavaScript code was executed.
 
 ## Payload Used
 
