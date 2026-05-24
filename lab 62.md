@@ -1,13 +1,13 @@
 ## Title
 
-# Stored Cross-Site Scripting (XSS) via Signature field in Acronis Forum
+ Stored XSS in Profile Signature Field
 
 ## Vulnerability Type
 
 Stored XSS
 
 ## Summary : 
-The "Report Name" input field in the Network Reports section does not sanitize or encode user-supplied input before storing it in the database and later rendering it back to users. This means any JavaScript payload entered as a report name gets saved and then executed in the browser of every authenticated user who visits the Reports page — not just the attacker.
+The "Signature" input field in the Profile section does not sanitize or encode user-supplied input before storing it in the database and later rendering it back to users. This means any JavaScript payload entered as a report name gets saved and then executed in the browser of every authenticated user who visits the Profile page — not just the attacker.
 
 ## Vulnerable Endpoint
 http://kzlabs.com/62.php
@@ -17,11 +17,10 @@ Vulnerable Parameter: Report Name field (input field inside the "New Network Rep
 ## Steps to Reproduce : 
 
 1. Log in to the application at `https://kzlabs.com/62.php` with a valid account.
-2. Navigate to the Reports tab.
-3. Click on + New Network Report.
-4. In the Report Name field, enter the following payload: `<img src=x onerror="alert(1)" onclick="confirm(1)" onmouseover="prompt(1)">`
-5. Fill in the remaining required fields (Network, Date Range, etc.) and submit the form.
-6. Once the report is saved, you are redirected back to the Network Reports listing page.
+2. Navigate to the Profile page..
+3. In the Profile Signature field, enter the following payload: `<img src=x onerror="alert(1)" onclick="confirm(1)" onmouseover="prompt(1)">`
+5. Fill in the remaining required fields (Display,About me etc) and Save the profile.
+6. Once the Profile  is saved
 7. Observe that a JavaScript alert box pops up displaying `1` — confirming that the script executed.
 8. Every authenticated user who loads this page will trigger the same alert.
 
