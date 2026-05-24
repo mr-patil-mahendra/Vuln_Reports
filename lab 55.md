@@ -50,10 +50,9 @@ Steps to Reproduce :
 
  Validate and sanitize the redirectUrl parameter to ensure that it does not contain any malicious content. This can be done by:
 
-- User supplied input should be validated at server level.
-- Use a security encoding library to encode all parameters
-- Use whitelisting instead of blacklist for special charecters
-- Use HTTPOnly flag. This will prevent client-side scripts from accessing cookies
-- Use CSP header and avoid using eval, unsafe-inline etc directives in CSP.
+1. Filter out HTML tags like: `<script>`, `<img>`, `<svg>` from the Report Name field before saving anything to the database
+2. Filter out JavaScript methods like: `alert()`, `confirm()`, `prompt()` so even if a tag slips through the method won't execute
+4. If you're using PHP then use `htmlspecialchars()` function before rendering any user input back to the page
+5. Use Cloudflare as they have so many WAF rules that almost all XSS payloads will be blocked automatically before even reaching the server
 
 
