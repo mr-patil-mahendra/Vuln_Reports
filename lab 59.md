@@ -1,13 +1,13 @@
 ## Title
 
-# Reflected Cross-Site Scripting (XSS) in  Reddit's Shreddit API comments endpoint.
+ Reflected Cross-Site Scripting (XSS) via Path Parameter Injection in Comments Endpoint
 
 ## Vulnerability Type
 
 Reflected XSS
 
 ## Summary : 
-Reddit's Shreddit API comments endpoint  "http://kzlabs.com/59.php/svc/shreddit/api/comments/askreddit/POST_ID/t1_COMMENT_ID"  POST_ID is vulnerable to reflected XSS . It appears that the Post_id field in the url does not sanitize angle bracket characters on the mobile version of the site, allowing an attacker to execute arbitrary Javascript on the m.imgur.com domain.
+The application is vulnerable to Reflected XSS through the POST_ID path parameter. User input is reflected unsanitized inside an unquoted HTML attribute, allowing an attacker to inject a new event handler attribute and execute malicious JavaScript when a victim hovers over the affected element.
 
 ## Vulnerable Endpoint
 ```http://kzlabs.com/59.php/svc/shreddit/api/comments/askreddit/t3_u9po1l/t1_i5sxroa```
@@ -15,8 +15,7 @@ Reddit's Shreddit API comments endpoint  "http://kzlabs.com/59.php/svc/shreddit/
 Steps to Reproduce : 
 
 1. Log in to the application at  https://labs.krazeplanet.com/59.php  with Valid account.
-2. Visit the help center of Equifax 
-3. Navigate to the following URL : ```http://kzlabs.com/59.php/svc/shreddit/api/comments/askreddit/%3Cimg%20src=x%20onerror=%22alert(1)%22%20onclick=%22confirm(1)%22%20onmouseover=%22prompt(1)%22%3E/t1_i5u8kpl)```
+2. Navigate to the following URL : ```http://kzlabs.com/59.php/svc/shreddit/api/comments/askreddit/%3Cimg%20src=x%20onerror=%22alert(1)%22%20onclick=%22confirm(1)%22%20onmouseover=%22prompt(1)%22%3E/t1_i5u8kpl)```
 4. Observe that an alert box displaying , indicating that the JavaScript code was executed.
 
 ## Payload Used
