@@ -18,7 +18,7 @@ Steps to Reproduce :
 2. Visit the help center of Equifax 
 3. Navigate to the following URL : ```http://kzlabs.com/57.php?returnTo=javascript:alert(document.cookie)```
 4. Observe that an alert box displaying , indicating that the JavaScript code was executed.
-{ Screenshot } 
+
 
 ## Payload Used
 
