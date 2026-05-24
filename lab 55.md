@@ -16,13 +16,13 @@ Steps to Reproduce :
 
 1. Log in to the application at  https://labs.krazeplanet.com/55.php  with Valid account.
 2. Visit the help center of Equifax 
-3. Navigate to the following URL : '''https://labs.krazeplanet.com/55.php?search=Game1</script><svg onload="alert(1)">'''
+3. Navigate to the following URL : ```https://labs.krazeplanet.com/55.php?search=Game1</script><svg onload="alert(1)">```
 4. Observe that an alert box displaying , indicating that the JavaScript code was executed.
 { Screenshot } 
 
 ## Payload Used
 
-'''Game1</script><svg onload="alert(1)">'''
+```Game1</script><svg onload="alert(1)">```
 
 ## Proof of Concept Request
 screenshot
