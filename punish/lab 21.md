@@ -7,14 +7,14 @@
 Reflected XSS
 
 ## Summary : 
-In http://kzlabs.com/punishment/23.php email paramter is vulnerable to reflected XSS . website reflects the User input from search paramter . which leads attacker to add malecious javascript code within victims browser when user visit malecious url . 
+In http://kzlabs.com/punishment/21.php hidden parameter is vulnerable to reflected XSS . website reflects the User input from search paramter . which leads attacker to add malecious javascript code within victims browser when user visit malecious url . 
 
 ## Vulnerable Endpoint
-http://kzlabs.com/punishment/23.php?email=
+http://kzlabs.com/punishment/21.php?hidden=
 
 ## Steps to Reproduce : 
 
-1. Navigate to the following URL : ```http://kzlabs.com/punishment/23.php?email=%3CImg%20src=x%20onerror=%22eval(%27\x61\x6c\x65\x72\x74(1)%27)%22%3E```
+1. Navigate to the following URL : ```http://kzlabs.com/punishment/21.php?hidden=%3CImg%20src=x%20onerror=%22eval(%27\x61\x6c\x65\x72\x74(1)%27)%22%3E```
 2. Observe that a JavaScript alert box pops up displaying `1` — confirming that the script executed.
    
 
@@ -25,13 +25,14 @@ http://kzlabs.com/punishment/23.php?email=
 
 ## Proof of Concept Request
   ```Screemshot 1 : ``` TThe Report Shows Payload add in search bar . Location where payload should be insert. 
- <img width="1920" height="1080" alt="Screenshot From 2026-05-25 22-15-42" src="https://github.com/user-attachments/assets/c891e9fe-18c2-420c-854f-29960b49a6f9" />
+ <img width="1920" height="1080" alt="Screenshot From 2026-05-25 22-08-55" src="https://github.com/user-attachments/assets/7026d017-8b68-4802-b87a-0c8dc52a35e3" />
 
 
  ```Screenshot 2 : ``` The Report Shows Successfully the Payload has worked and Pop up Box get Fired.
  
  
-<img width="1920" height="1080" alt="Screenshot From 2026-05-25 22-15-49" src="https://github.com/user-attachments/assets/4ea540bf-d8f2-4b89-af43-88fa00496998" />
+ <img width="1920" height="1080" alt="Screenshot From 2026-05-25 22-09-02" src="https://github.com/user-attachments/assets/53350cd7-eb8f-40dc-9da2-abfbd94acdfd" />
+
 
 
 

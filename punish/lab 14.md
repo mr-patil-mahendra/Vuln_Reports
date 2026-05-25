@@ -7,31 +7,33 @@
 Reflected XSS
 
 ## Summary : 
-In http://kzlabs.com/punishment/23.php email paramter is vulnerable to reflected XSS . website reflects the User input from search paramter . which leads attacker to add malecious javascript code within victims browser when user visit malecious url . 
+http://kzlabs.com/punishment/14.php? p prameter  is vulnerable to reflected XSS . website reflects the User input from search paramter . which leads attacker to add malecious javascript code within victims browser when user visit malecious url . 
 
 ## Vulnerable Endpoint
-http://kzlabs.com/punishment/23.php?email=
+https://labs.krazeplanet.com/56.php?p=
 
 ## Steps to Reproduce : 
 
-1. Navigate to the following URL : ```http://kzlabs.com/punishment/23.php?email=%3CImg%20src=x%20onerror=%22eval(%27\x61\x6c\x65\x72\x74(1)%27)%22%3E```
+1. Navigate to the following URL : ```http://kzlabs.com/punishment/14.php?p=%3CImg%20src=x%20onerror=%22alert(1)%22%3E```
 2. Observe that a JavaScript alert box pops up displaying `1` — confirming that the script executed.
    
 
 
 ## Payload Used
 
-```<Img src=x onerror="eval('\x61\x6c\x65\x72\x74(1)')">```
+```<Img src=x onerror="alert(1)">```
 
 ## Proof of Concept Request
   ```Screemshot 1 : ``` TThe Report Shows Payload add in search bar . Location where payload should be insert. 
- <img width="1920" height="1080" alt="Screenshot From 2026-05-25 22-15-42" src="https://github.com/user-attachments/assets/c891e9fe-18c2-420c-854f-29960b49a6f9" />
+  
+<img width="1920" height="1080" alt="Screenshot From 2026-05-25 21-20-57" src="https://github.com/user-attachments/assets/e5c36d5e-b1f0-42c6-8474-362756bcd7ca" />
 
 
  ```Screenshot 2 : ``` The Report Shows Successfully the Payload has worked and Pop up Box get Fired.
  
  
-<img width="1920" height="1080" alt="Screenshot From 2026-05-25 22-15-49" src="https://github.com/user-attachments/assets/4ea540bf-d8f2-4b89-af43-88fa00496998" />
+<img width="1920" height="1080" alt="Screenshot From 2026-05-25 21-21-06" src="https://github.com/user-attachments/assets/9a184f8d-0151-421c-8e1f-78ad7ec30b96" />
+
 
 
 

