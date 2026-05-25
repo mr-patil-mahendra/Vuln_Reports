@@ -47,7 +47,7 @@ https://kzlabs.com/2.php?fname=&lname=
   - It allows to perform  unauthorized actions within the vulnerable application
   - It allows attacker to exfiltrate sensitive data
   
-## Recommendations for fix:
+## Recommendations for fix
 
  Validate and sanitize the redirectUrl parameter to ensure that it does not contain any malicious content. This can be done by:
 
