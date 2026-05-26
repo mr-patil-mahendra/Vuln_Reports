@@ -7,7 +7,7 @@
 Reflected XSS
 
 ## Summary : 
-In http://kzlabs.com/13.php cat parameter is vulnerable to reflected XSS . website reflects the User input from search paramter . which leads attacker to add malecious javascript code within victims browser when user visit malecious url . 
+In http://kzlabs.com/13.php academy parameter is vulnerable to reflected XSS . website reflects the User input from search paramter . which leads attacker to add malecious javascript code within victims browser when user visit malecious url . 
 
 ## Vulnerable Endpoint
 http://kzlabs.com/13.php?academy=
