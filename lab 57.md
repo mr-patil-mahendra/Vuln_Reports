@@ -6,14 +6,13 @@
 
 Reflected XSS
 
-## Summary : 
+## Summary  
 The returnTo parameter is vulnerable and Open Redirect due to improper input validation. An attacker can inject a javascript: URI or external URL, leading to JavaScript execution or redirection to a malicious website when a user clicks the Continue button.
 
 ## Vulnerable Endpoint
 https://labs.krazeplanet.com/57.php?returnTo=
 
-Steps to Reproduce : 
-
+Steps to Reproduce 
 
 1. Navigate to the following URL : ```http://kzlabs.com/57.php?returnTo=javascript:alert(document.cookie)```
 2. Observe that a JavaScript alert box pops up displaying `1` — confirming that the script executed.
@@ -45,7 +44,7 @@ Steps to Reproduce :
   - It allows to perform  unauthorized actions within the vulnerable application
   - It allows attacker to exfiltrate sensitive data
   
-## Recommendations for fix:
+## Recommendations for fix
 
  Validate and sanitize the redirectUrl parameter to ensure that it does not contain any malicious content. This can be done by:
 
