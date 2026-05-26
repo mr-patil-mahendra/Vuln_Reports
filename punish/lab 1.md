@@ -6,13 +6,13 @@
 
 Reflected XSS
 
-## Summary : 
+## Summary  
 IN https://kzlabs.com/punishment/1.php?fname first name  box is vulnerable to reflected XSS . website reflects the User input from search paramter . which leads attacker to add malecious javascript code within victims browser when user visit malecious url . 
 
 ## Vulnerable Endpoint
 
 
-## Steps to Reproduce : 
+## Steps to Reproduce  
 
 1. Navigate to the following URL : ```https://kzlabs.com/punishment/1.php?fname=<script>alert(1)<%2Fscript>&lname=```
 2. Observe that a JavaScript alert box pops up displaying `1` — confirming that the script executed.
@@ -46,7 +46,7 @@ IN https://kzlabs.com/punishment/1.php?fname first name  box is vulnerable to re
   - It allows to perform  unauthorized actions within the vulnerable application
   - It allows attacker to exfiltrate sensitive data
   
-## Recommendations for fix:
+## Recommendations for fix
 
  Validate and sanitize the redirectUrl parameter to ensure that it does not contain any malicious content. This can be done by:
 
