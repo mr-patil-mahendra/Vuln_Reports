@@ -6,13 +6,13 @@
 
 Reflected XSS
 
-## Summary : 
+## Summary  
 Pubg-Community Feed  http://kzlabs.com/56.php?p= Search box is vulnerable to reflected XSS . website reflects the User input from p paramter . which leads attacker to add malecious javascript code within victims browser when user visit malecious url . 
 
 ## Vulnerable Endpoint
 https://labs.krazeplanet.com/56.php?p=
 
-Steps to Reproduce : 
+Steps to Reproduce  
  
 1. Navigate to the following URL : ```http://kzlabs.com/56.php?p=Game1%27%3E%3Cimg+src%3Da+onerror%3Dalert%28document.cookie%29%3E```
 2. Observe that a JavaScript alert box pops up displaying `1` — confirming that the script executed.
@@ -45,7 +45,7 @@ Steps to Reproduce :
   - It allows to perform  unauthorized actions within the vulnerable application
   - It allows attacker to exfiltrate sensitive data
   
-## Recommendations for fix:
+## Recommendations for fix
 
  Validate and sanitize the redirectUrl parameter to ensure that it does not contain any malicious content. This can be done by:
 
