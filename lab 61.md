@@ -6,7 +6,7 @@ Stored XSS via Rich Text Editor HTML Tab in Article Body
 
 Stored XSS
 
-## Summary : 
+## Summary  
 
 The application is vulnerable to Stored Cross-Site Scripting (XSS) through the article Body (HTML) field. User-supplied HTML is stored without sanitization and rendered using innerHTML, allowing an attacker to inject malicious JavaScript that executes when users view the affected article page.
 
@@ -15,7 +15,7 @@ http://kzlabs.com/61.php
 
 Vulnerable Parameter: article Body (HTML) field (input field inside the "Write article" form)
 
-## Steps to Reproduce : 
+## Steps to Reproduce  
 
 1. Log in to the application at `https://kzlabs.com/61.php` with a valid account.
 2. Navigate to the My Article tab.
@@ -56,7 +56,7 @@ Vulnerable Parameter: article Body (HTML) field (input field inside the "Write a
 - Can inject fake login forms to harvest credentials
 - One submission hits every authenticated user
   
-## Recommendations for fix:
+## Recommendations for fix
 
  Validate and sanitize the redirectUrl parameter to ensure that it does not contain any malicious content. This can be done by:
 
