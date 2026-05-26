@@ -1,12 +1,11 @@
 ## Title
-
-# Stored Cross-Site Scripting (XSS) via Report Name Field in Network Reports
+ Stored Cross-Site Scripting (XSS) via Report Name Field in Network Reports
 
 ## Vulnerability Type
 
 Stored XSS
 
-## Summary : 
+## Summary  
 The "Report Name" input field in the Network Reports section does not sanitize or encode user-supplied input before storing it in the database and later rendering it back to users. This means any JavaScript payload entered as a report name gets saved and then executed in the browser of every authenticated user who visits the Reports page — not just the attacker.
 
 ## Vulnerable Endpoint
@@ -14,7 +13,7 @@ http://kzlabs.com/60.php
 
 Vulnerable Parameter: Report Name field (input field inside the "New Network Report" form)
 
-## Steps to Reproduce : 
+## Steps to Reproduce  
 
 1. Log in to the application at `https://kzlabs.com/60.php` with a valid account.
 2. Navigate to the Reports tab.
@@ -53,7 +52,7 @@ Vulnerable Parameter: Report Name field (input field inside the "New Network Rep
 - Can inject fake login forms to harvest credentials
 - One submission hits every authenticated user
   
-## Recommendations for fix:
+## Recommendations for fix
 
  Validate and sanitize the redirectUrl parameter to ensure that it does not contain any malicious content. This can be done by:
 
