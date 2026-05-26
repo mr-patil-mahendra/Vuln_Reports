@@ -11,7 +11,7 @@ In http://kzlabs.com/13.php search parameter is vulnerable to reflected XSS . we
 ## Vulnerable Endpoint
 http://kzlabs.com/16.php?search=
 
-## Steps to Reproduce : 
+## Steps to Reproduce  
 
 1. Navigate to the following URL : ```http://kzlabs.com/16.php?search=%3C%2Fhr%3E%3Cobject+onerror%3D%22alert%281%29%22+data%3Dx%3E```
 2. Observe that a JavaScript alert box pops up displaying `1` — confirming that the script executed.
@@ -39,7 +39,7 @@ http://kzlabs.com/16.php?search=
   - It allows to perform  unauthorized actions within the vulnerable application
   - It allows attacker to exfiltrate sensitive data
   
-## Recommendations for fix:
+## Recommendations for fix
 
  Validate and sanitize the redirectUrl parameter to ensure that it does not contain any malicious content. This can be done by:
 
