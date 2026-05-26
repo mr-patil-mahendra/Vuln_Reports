@@ -4,16 +4,16 @@ Stored XSS  via User Comment System
 
 ## Vulnerability Type
 
-Reflected XSS
+Stored XSS
 
-## Summary : 
+## Summary  
 In http://kzlabs.com/18.php Comment is vulnerable to Stored XSS . website reflects the User input from search paramter . which leads attacker to add malecious javascript code within victims browser when user visit malecious url . 
 
 ## Vulnerable Endpoint
 
 http://kzlabs.com/18.php
 
-## Steps to Reproduce : 
+## Steps to Reproduce 
 
 1. Log in to the application at `https://kzlabs.com/.php` with a valid account.
 2. Navigate to the Post a Comment tab.
@@ -44,7 +44,7 @@ http://kzlabs.com/18.php
   - It allows to perform  unauthorized actions within the vulnerable application
   - It allows attacker to exfiltrate sensitive data
   
-## Recommendations for fix:
+## Recommendations for fix
 
  Validate and sanitize the redirectUrl parameter to ensure that it does not contain any malicious content. This can be done by:
 
