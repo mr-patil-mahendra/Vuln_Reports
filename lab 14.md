@@ -6,13 +6,13 @@
 
 Reflected XSS
 
-## Summary : 
+## Summary  
 In http://kzlabs.com/13.php page parameter is vulnerable to reflected XSS . website reflects the User input from search paramter . which leads attacker to add malecious javascript code within victims browser when user visit malecious url . 
 
 ## Vulnerable Endpoint
 http://kzlabs.com/14.php?page=
 
-## Steps to Reproduce : 
+## Steps to Reproduce  
 
 1. Navigate to the following URL : ```http://kzlabs.com/14.php?page=%3Cobject%20onerror=%22aleralertt(1)%22%20data=x%3E```
 2. Observe that a JavaScript alert box pops up displaying `1` — confirming that the script executed.
@@ -40,7 +40,7 @@ http://kzlabs.com/14.php?page=
   - It allows to perform  unauthorized actions within the vulnerable application
   - It allows attacker to exfiltrate sensitive data
   
-## Recommendations for fix:
+## Recommendations for fix
 
  Validate and sanitize the redirectUrl parameter to ensure that it does not contain any malicious content. This can be done by:
 
