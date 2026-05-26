@@ -6,13 +6,13 @@
 
 Stored XSS
 
-## Summary : 
+## Summary  
 In http://kzlabs.com/13.php update profile  is vulnerable to Stored XSS . website reflects the User input from search paramter . which leads attacker to add malecious javascript code within victims browser when user visit malecious url . 
 
 ## Vulnerable Endpoint
 http://kzlabs.com/18.php
 
-## Steps to Reproduce : 
+## Steps to Reproduce  
 
 1. Log in to the application at `https://kzlabs.com/.php` with a valid account.
 2. Navigate to the Post a Comment tab.
