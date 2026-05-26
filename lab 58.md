@@ -6,7 +6,7 @@
 
 Reflected XSS
 
-## Summary : 
+## Summary  
 The application is vulnerable to Reflected XSS through the username segment in the URL path. User input is reflected unsanitized inside a double-quoted href attribute, allowing an attacker to inject malicious JavaScript that executes automatically when a victim visits a crafted URL.
 
 ## Vulnerable Endpoint
@@ -43,7 +43,7 @@ Steps to Reproduce :
   - It allows to perform  unauthorized actions within the vulnerable application
   - It allows attacker to exfiltrate sensitive data
   
-## Recommendations for fix:
+## Recommendations for fix
 
  Validate and sanitize the redirectUrl parameter to ensure that it does not contain any malicious content. This can be done by:
 
