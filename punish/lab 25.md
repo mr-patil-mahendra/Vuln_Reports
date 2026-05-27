@@ -6,13 +6,13 @@
 
 Reflected XSS
 
-## Summary : 
+## Summary  
 In https://kzlabs.com/punishment/25.php?search=  search paramter is vulnerable to reflected XSS . website reflects the User input from search paramter . which leads attacker to add malecious javascript code within victims browser when user visit malecious url . 
 
 ## Vulnerable Endpoint
 https://kzlabs.com/punishment/25.php?cat=
 
-## Steps to Reproduce : 
+## Steps to Reproduce  
 
 1. Navigate to the following URL : ```https://kzlabs.com/punishment/25.php?cat=Game2%3Cimimgg%20src=x%20onerror=%22alert(1)%22%20onclick=%22confirconfirmm(1)%22%20onmouseover=%22propromptmpt(1)%22%3E```
 2. Observe that a JavaScript alert box pops up displaying `1` — confirming that the script executed.
@@ -46,7 +46,7 @@ https://kzlabs.com/punishment/25.php?cat=
   - It allows to perform  unauthorized actions within the vulnerable application
   - It allows attacker to exfiltrate sensitive data
   
-## Recommendations for fix:
+## Recommendations for fix
 
  Validate and sanitize the redirectUrl parameter to ensure that it does not contain any malicious content. This can be done by:
 
